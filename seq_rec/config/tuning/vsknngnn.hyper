@@ -1,0 +1,6 @@
+k choice [50,100,500,1000,1500]
+sample_size choice [500,1000,2500,5000,10000]
+weighting choice ['same','div','linear','quadratic','log']
+weighting_score choice ['same','div','linear','quadratic','log']
+idf_weighting choice [False,1,2,5,10]
+emb_threshold choice [0.9, 0.95, 0.99, 0.999]

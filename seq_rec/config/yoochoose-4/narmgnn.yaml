@@ -1,0 +1,27 @@
+model: NARMGNN
+dataset: yoochoose-4
+
+data_path: "../data/"
+additional_feat_suffix: [itememb]
+
+benchmark_filename: ['train', 'valid', 'test']
+
+
+USER_ID_FIELD: session_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+
+load_col:
+    inter: [session_id, item_id, timestamp, item_id_list]
+    item: [item_id, category_id]
+    itememb: [iid, item_emb]
+
+alias_of_item_id: [iid, item_id_list]
+preload_weight:
+    iid: item_emb
+
+embedding_size: 128
+n_layers: 1
+hidden_size: 128
+learning_rate: 0.0005
+dropout_probs: [0.25,0.5]

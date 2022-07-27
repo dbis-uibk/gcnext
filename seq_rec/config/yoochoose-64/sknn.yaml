@@ -1,0 +1,27 @@
+model: SKNN
+dataset: yoochoose-64
+
+data_path: "../data/"
+
+benchmark_filename: ['train', 'valid', 'test']
+
+alias_of_item_id: ['item_id_list']
+
+USER_ID_FIELD: session_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+
+load_col:
+    inter: [session_id, item_id_list, item_id, timestamp]
+
+k: 1000
+sample_size: 2500
+sampling: recent
+remind: False
+extend: False
+
+normalize: True
+similarity: 'jaccard'
+pop_boost: 0
+
+epochs: 1

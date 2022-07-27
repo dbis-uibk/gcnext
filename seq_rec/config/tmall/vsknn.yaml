@@ -1,0 +1,33 @@
+model: VSKNN
+dataset: tmall
+
+data_path: "../data/"
+
+USER_ID_FIELD: session_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+
+load_col:
+    inter: [session_id, item_id, timestamp]
+
+k: 1000
+sample_size: 1000
+sampling: recent
+
+remind: True
+extend: False
+
+similarity: 'vec'
+weighting: 'log'
+dwelling_time: False
+last_n_days: null
+last_n_clicks: null
+push_reminders: False
+add_reminders: False
+weighting_score: 'same'
+weighting_time: False
+normalize: True
+idf_weighting: 2
+idf_weighting_session: False
+
+epochs: 1

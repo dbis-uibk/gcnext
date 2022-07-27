@@ -1,0 +1,29 @@
+model: VSTAN
+dataset: yoochoose-64
+
+data_path: "../data/"
+
+benchmark_filename: ['train', 'valid', 'test']
+
+alias_of_item_id: ['item_id_list']
+
+USER_ID_FIELD: session_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+
+load_col:
+    inter: [session_id, item_id_list, item_id, timestamp]
+
+k: 500
+sample_size: 2500
+sampling: recent
+remind: True
+extend: False
+lambda_spw: 1.02
+lambda_snh: 5
+lambda_inh: 2.05
+
+lambda_ipw: 1.02
+lambda_idf: 5
+
+epochs: 1

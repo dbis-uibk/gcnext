@@ -1,0 +1,30 @@
+model: SKNNGNN
+dataset: diginetica
+
+data_path: "../data/"
+additional_feat_suffix: [itememb]
+
+USER_ID_FIELD: session_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+
+load_col:
+    inter: [session_id, item_id, timestamp]
+    itememb: [ iid, item_emb ]
+
+alias_of_item_id: [ iid ]
+preload_weight:
+    iid: item_emb
+
+emb_threshold: 0.999
+
+k: 1500
+sample_size: 1000
+sampling: recent
+remind: False
+extend: False
+
+normalize: True
+pop_boost: 0
+
+epochs: 1

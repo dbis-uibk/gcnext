@@ -1,0 +1,24 @@
+model: GRU4RecF
+dataset: music4all
+
+data_path: "../data/"
+
+USER_ID_FIELD: session_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+
+load_col:
+    inter: [session_id, item_id, timestamp]
+    item: [item_id, popularity, release, danceability, energy, key, mode, valence, tempo, duration_ms, language, tags]
+
+selected_features: [popularity, release, danceability, energy, key, mode, valence, tempo, duration_ms, language, tags]
+normalize_all: True
+
+embedding_size: 128
+hidden_size: 128
+num_layers: 1
+
+dropout_prob: 0.4
+pooling_mode: sum
+
+learning_rate: 0.001

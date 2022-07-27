@@ -1,0 +1,15 @@
+model: STAMP
+dataset: music4all
+
+data_path: "../data/"
+
+USER_ID_FIELD: session_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+
+load_col:
+    inter: [session_id, item_id, timestamp]
+
+embedding_size: 128
+
+learning_rate: 0.001

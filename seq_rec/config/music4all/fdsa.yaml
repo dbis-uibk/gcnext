@@ -1,0 +1,23 @@
+model: FDSA
+dataset: music4all
+
+data_path: "../data/"
+
+USER_ID_FIELD: session_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+
+load_col:
+    inter: [session_id, item_id, timestamp]
+    item: [item_id, popularity, release, danceability, energy, key, mode, valence, tempo, duration_ms, language, tags, ivec]
+
+selected_features: [popularity, release, danceability, energy, key, mode, valence, tempo, duration_ms, language, tags, ivec]
+normalize_all: True
+
+hidden_size: 128 # embedding size
+
+attn_dropout_prob: 0.5
+hidden_dropout_prob: 0.2
+learning_rate: 0.0005
+n_heads: 1
+n_layers: 2

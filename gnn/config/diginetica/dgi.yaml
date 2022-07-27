@@ -1,0 +1,24 @@
+dataname: diginetica
+save_dir: 'data/'
+epochs: 1000
+patience: 20
+transductive: False
+emb_size: 128
+gpu: 0
+verbose: 1
+batch_size: 512
+
+saint_sampling: False
+walk_length: 2
+num_steps: 5
+
+num_neighbors: [10,5]
+
+encoder_dropout: 0.0
+encoder_hidden_layer: 256
+num_layers: 2
+num_heads: 2
+
+lr: 1.0e-5
+mm: 0.99
+weight_decay: 1.0e-5

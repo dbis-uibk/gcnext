@@ -1,0 +1,32 @@
+model: SASRecX
+dataset: yoochoose-64
+
+data_path: "../data/"
+additional_feat_suffix: [itememb]
+
+benchmark_filename: ['train', 'valid', 'test']
+
+USER_ID_FIELD: session_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+
+load_col:
+    inter: [session_id, item_id, timestamp, item_id_list]
+    itememb: [ iid, item_emb ]
+
+alias_of_item_id: [ iid, item_id_list ]
+preload_weight:
+    iid: item_emb
+
+embedding_size: 128
+hidden_size: 128
+
+inner_size: 256
+n_layers: 2
+n_heads: 2
+
+hidden_dropout_prob: 0.5
+attn_dropout_prob: 0.5
+hidden_act: 'gelu'
+layer_norm_eps: 1e-12
+initializer_range: 0.02

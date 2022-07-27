@@ -1,0 +1,9 @@
+neg_sampling: #None
+loss_type: CE
+MAX_ITEM_LIST_LENGTH: 50
+train_batch_size: 512
+eval_batch_size: 2048
+stopping_step: 3
+topk: 20
+valid_metric: 'MRR@20'
+seed: 2020

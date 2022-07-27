@@ -1,0 +1,31 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[[source]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu102/torch_stable.html"
+verify_ssl = false
+
+[[source]]
+name = "pytorch-geometric"
+url = "https://pytorch-geometric.com/whl/torch-1.10.0+cu102.html"
+verify_ssl = false
+
+[packages]
+torch = {index = "pytorch",version= "==1.10.0"}
+torch-scatter = {index= "pytorch-geometric", version= "*"}
+torch-sparse = {index= "pytorch-geometric", version= "*"}
+torch-geometric = {index= "pytorch-geometric", version= "*"}
+torch-cluster = {index= "pytorch-geometric", version= "*"}
+pandas = "*"
+tensorboard = "*"
+pyarrow = "*"
+recbole = "*"
+hyperopt = "0.2.5"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"

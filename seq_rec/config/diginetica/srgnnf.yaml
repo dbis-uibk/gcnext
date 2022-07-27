@@ -1,0 +1,19 @@
+model: SRGNNF
+dataset: diginetica
+
+data_path: "../data/"
+
+USER_ID_FIELD: session_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+
+load_col:
+    inter: [session_id, item_id, timestamp]
+    item: [item_id, category_id, name_tokens, pricelog2]
+
+selected_features: [category_id, pricelog2]
+normalize_all: True
+
+embedding_size: 128
+step: 1
+pooling_mode: sum

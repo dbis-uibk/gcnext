@@ -1,0 +1,23 @@
+model: SRGNNF
+dataset: mssd
+
+data_path: "../data/"
+
+USER_ID_FIELD: session_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+
+load_col:
+    inter: [session_id, item_id, timestamp]
+    item: [item_id, duration, us_popularity_estimate, acousticness, beat_strength, bounciness, danceability,
+           dyn_range_mean, flatness, instrumentalness, liveness, loudness, mechanism, organism, speechiness, tempo,
+           valence, release_year, key, mode, time_signature, acoustic_vector]
+
+selected_features: [us_popularity_estimate, acousticness, beat_strength, bounciness, danceability,
+           dyn_range_mean, flatness, instrumentalness, liveness, loudness, mechanism, organism, speechiness, tempo,
+           valence, release_year, key, mode, time_signature, acoustic_vector]
+normalize_all: True
+
+embedding_size: 128
+step: 1
+pooling_mode: sum

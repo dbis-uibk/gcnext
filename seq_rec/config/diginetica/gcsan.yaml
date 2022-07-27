@@ -1,0 +1,13 @@
+model: GCSAN
+dataset: diginetica
+
+data_path: "../data/"
+
+USER_ID_FIELD: session_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+
+load_col:
+    inter: [session_id, item_id, timestamp]
+
+hidden_size: 128 # embedding size

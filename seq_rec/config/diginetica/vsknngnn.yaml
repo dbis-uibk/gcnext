@@ -1,0 +1,40 @@
+model: VSKNNGNN
+dataset: diginetica
+
+data_path: "../data/"
+additional_feat_suffix: [itememb]
+
+USER_ID_FIELD: session_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+
+load_col:
+    inter: [session_id, item_id, timestamp]
+    itememb: [iid, item_emb]
+
+alias_of_item_id: [iid]
+preload_weight:
+    iid: item_emb
+
+emb_threshold: 0.95
+
+k: 1000
+sample_size: 2500
+sampling: recent
+
+remind: True
+extend: False
+
+weighting: 'log'
+dwelling_time: False
+last_n_days: null
+last_n_clicks: null
+push_reminders: False
+add_reminders: False
+weighting_score: 'same'
+weighting_time: False
+normalize: True
+idf_weighting: 2
+idf_weighting_session: False
+
+epochs: 1

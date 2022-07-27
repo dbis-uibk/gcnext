@@ -1,0 +1,30 @@
+model: STANGNN
+dataset: mssd
+
+data_path: "../data/"
+additional_feat_suffix: [itememb]
+
+USER_ID_FIELD: session_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+
+load_col:
+    inter: [session_id, item_id, timestamp]
+    itememb: [iid, item_emb]
+
+alias_of_item_id: [iid]
+preload_weight:
+    iid: item_emb
+
+emb_threshold: 0.8
+
+k: 100
+sample_size: 500
+sampling: recent
+remind: True
+extend: False
+lambda_spw: 1.02
+lambda_snh: 5
+lambda_inh: 2.05
+
+epochs: 1
