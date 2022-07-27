@@ -6,7 +6,7 @@ Use `pipenv` to create virtual environment.
 
 Diginetica & Tmall datasets can be found under: https://drive.google.com/drive/folders/1ritDnO_Zc6DFEU6UND9C8VCisT0ETVp5
 
-Copy datasets to `data` folder. 
+Copy raw datasets to `data` folder. 
 
 ## Usage
 Tmall dataset as example:
