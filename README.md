@@ -30,7 +30,14 @@ Change config paths for different datasets and models.
 See `Pipfile`.
 
 ## Citation
-TBA
+```
+@inproceedings{peintner:cars:2022,
+ author = {Andreas Peintner, Marta Moscati, Emilia Parada-Cabaleiro, Markus Schedl, Eva Zangerle},
+ booktitle = {CARS: Workshop on Context-Aware Recommender Systems (RecSys ’22)},
+ title = {Unsupervised Graph Embeddings for Session-based Recommendation with Item Features},
+ year = {2022}
+}
+```
 
 ## References
 - https://github.com/nerdslab/bgrl
